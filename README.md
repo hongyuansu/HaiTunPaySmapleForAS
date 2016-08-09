@@ -2,16 +2,16 @@
 此项目为海豚AndroidStudio版本Demo，clone后可直接run，下面将帮助您如何集成海豚到项目中去：
 
 ####第一步：
-复制到sdk文件（.aar）到主Moudle的libs目录下，Demo中路径为HaiTunPaySmapleForAS/app/libs/haitunsdk-x.x.x.aar
+复制到sdk文件（.aar）到主Moudle的libs目录下，Demo中路径为HaiTunPaySmapleForAS/app/libs/haitunsdk-x.x.x.aar ([戳这里](/app/libs/))
 
 ####第二步：
-在项目主Moudle下的build.gradle文件android标签下添加如下配置：[demo配置]|(/app/build.gradle)
-```json
+在项目主Moudle下的build.gradle文件android标签下添加如下配置：[demo配置](/app/build.gradle)
+```java
 repositories {
-        flatDir {
-            dirs "libs"
-        }
+    flatDir {
+        dirs "libs"
     }
+}
 ```
 在dependencies标签下添加如下配置：[demo配置](/app/build.gradle)
 ```java
@@ -40,7 +40,7 @@ AndroidManifest中添加如下配置：
 将Demo中HaiTunPaySmapleForAS/app/src/main/java/com/longyou/haitunpay/目录下的wxapi文件夹([demo目录位置戳这里](/app/src/main/java/com/longyou/haitunpay/))复制到您项目主Moudle下src/main/java/包名(xxx.xxx.xxx)/目录下
 
 ###第五步：
-在自定义的Application的onCreate中进行SDK初始化[demo代码](/app/src/main/java/com/longyou/haitunpay/App.java)
+在自定义的Application的onCreate中进行SDK初始化 [demo代码](/app/src/main/java/com/longyou/haitunpay/App.java)
 ```java
 //HaiTunPay.getInstance().initWithWechat("商户在海豚平台注册后获得的merId", "商户在海豚平台注册后获得的key", "");
 // 如果在AndroidManifest文件中配置了HAITUN_WECHAT_KEY及HAITUN_WECHAT_MERID，
@@ -57,11 +57,10 @@ PaymentBean paymentBean = new PaymentBean("商户自己生成的唯一订单ID",
 //paymentBean.setSjt_UserName("");// 备用参数，可用于设置渠道等其他
 //paymentBean.setSjt_Paytype("");// 备用参数
 ```
-2. 调用以下代码进行调起支付
+2. 调用以下代码进行调起支付 [demo代码](/app/src/main/java/com/longyou/haitunpay/MainActivity.java)
 ```java
 HaiTunPay.getInstance().openWeChatPay(this, paymentBean);
 ```
-[demo代码](/app/src/main/java/com/longyou/haitunpay/MainActivity.java)
 3. 支付回调函数位于[WXPayEntryActivity.java](/app/src/main/java/com/longyou/haitunpay/wxapi/WXPayEntryActivity.java)中，商户可在此回调函数中进行业务逻辑处理
 ```java
 @Override
