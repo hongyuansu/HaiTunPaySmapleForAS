@@ -1,5 +1,5 @@
 # 帮助文档
-此项目为海豚AndroidStudio版本Demo，clone后可直接run，下面将帮助您如何集成海豚到项目中去：
+此项目为海豚AndroidStudio版本Demo（[Eclipse版本戳这里](https://github.com/youlongkeji/HaiTunPaySmapleForEclipse)），clone后可直接run，下面将帮助您如何集成海豚到项目中去：
 
 ####第一步：
 复制到sdk文件（.aar）到`主Moudle的libs目录`下，Demo中路径为HaiTunPaySmapleForAS/app/libs/haitunsdk-x.x.x.aar ([戳这里](/app/libs/))
