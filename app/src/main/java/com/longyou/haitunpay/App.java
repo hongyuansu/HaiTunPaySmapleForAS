@@ -13,8 +13,11 @@ public class App extends Application {
     public void onCreate() {
         super.onCreate();
 
-//        HaiTunPay.getInstance().initWithWechat("商户在海豚平台注册后获得的merId", "商户在海豚平台注册后获得的key", "");
+        //HaiTunPay.getInstance().initWithWechat("商户在海豚平台注册后获得的merId", "商户在海豚平台注册后获得的key", "");
+        // 如果在AndroidManifest文件中配置了HAITUN_WECHAT_KEY及HAITUN_WECHAT_MERID，
+        // 则直接调用无参init函数初始化即可，如果未在xm中配置，则调用上面的initWithWechat函数进行初始化
         HaiTunPay.getInstance().init(this);
+        // 配置是否显示控制台日志，开启后便于开发者查看问题
         HaiTunPay.setDebug(true);
     }
 }

@@ -36,8 +36,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         double price = Double.valueOf(priceEdit.getText().toString());
 
         String orderId = "HT" + System.currentTimeMillis();
-        PaymentBean paymentBean = new PaymentBean(orderId, price, TextUtils.isEmpty(desEdit.getText().toString()) ? "测试商品" : desEdit.getText().toString(), "http://www.haitunpay.com/");
-
+        PaymentBean paymentBean = new PaymentBean(orderId/**商户自己的唯一订单号*/,
+                price/**支付金额，单位:元*/,
+                TextUtils.isEmpty(desEdit.getText().toString()) ? "测试商品" : desEdit.getText().toString()/**订单描述*/,
+                "http://www.haitunpay.com/"/**服务端回调地址*/);
+        //paymentBean.setSjt_UserName("");// 备用参数，可用于设置渠道等其他
+        //paymentBean.setSjt_Paytype("");// 备用参数
         HaiTunPay.getInstance().openWeChatPay(this, paymentBean);
     }
 }
