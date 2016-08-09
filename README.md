@@ -51,17 +51,17 @@ HaiTunPay.setDebug(true);
 ```
 到这里SDK配置就已经完成了
 ###如何调起支付
-1. 构建`PaymentBean`对象用于调起支付的必要参数
+* 构建`PaymentBean`对象用于调起支付的必要参数
 ```java
 PaymentBean paymentBean = new PaymentBean("商户自己生成的唯一订单ID", price/**支付金额，单位:元*/, "订单描述，不能为空", "支付服务端回调地址");
 //paymentBean.setSjt_UserName("");// 备用参数，可用于设置渠道等其他
 //paymentBean.setSjt_Paytype("");// 备用参数
 ```
-2. 调用以下代码进行调起支付 [demo代码](/app/src/main/java/com/longyou/haitunpay/MainActivity.java)
+* 调用以下代码进行调起支付 [demo代码](/app/src/main/java/com/longyou/haitunpay/MainActivity.java)
 ```java
 HaiTunPay.getInstance().openWeChatPay(this, paymentBean);
 ```
-3. 支付回调函数位于[WXPayEntryActivity.java](/app/src/main/java/com/longyou/haitunpay/wxapi/WXPayEntryActivity.java)中，商户可在此回调函数中进行业务逻辑处理
+* 支付回调函数位于[WXPayEntryActivity.java](/app/src/main/java/com/longyou/haitunpay/wxapi/WXPayEntryActivity.java)中，商户可在此回调函数中进行业务逻辑处理
 ```java
 @Override
     public void onResp(BaseResp resp) {
@@ -81,6 +81,7 @@ HaiTunPay.getInstance().openWeChatPay(this, paymentBean);
 ```
 
 ###混淆配置
+[demo配置](/app/proguard-rules.pro)
 ```java
 -dontwarn com.longyou.haitunsdk.**
 -keep class com.longyou.haitunsdk.** { *; }
@@ -93,7 +94,7 @@ HaiTunPay.getInstance().openWeChatPay(this, paymentBean);
 
 ###***重要说明 x 3***
 1. 商户包名必须为`com.longyou.haitunpay`
-2. apk签名文件必须使用demo中的`haitunpay.jks`，签名信息如下：
+2. apk签名文件必须使用demo中的`haitunpay.jks`，签名信息如下：[demo配置](/app/build.gradle)
 ```java
 keyAlias 'haitunpay'
 storePassword 'haitunpay123'
