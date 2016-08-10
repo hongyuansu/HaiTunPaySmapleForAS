@@ -37,7 +37,7 @@ AndroidManifest中添加如下配置：[demo配置](/app/src/main/AndroidManifes
 所需权限配置：`<uses-permission android:name="android.permission.INTERNET"/>`
 
 ####第四步：
-将Demo中`HaiTunPaySmapleForAS/app/src/main/java/com/longyou/haitunpay/`目录下的`wxapi`文件夹([demo目录位置戳这里](/app/src/main/java/com/longyou/haitunpay/))复制到您项目主Moudle下`src/main/java/包名(xxx.xxx.xxx)/`目录下
+将Demo中`HaiTunPaySmapleForAS/app/src/main/java/com/longyou/haitunpay/`目录下的`wxapi`文件夹([demo目录位置戳这里](/app/src/main/java/com/longyou/haitunpay/))复制到您项目主Moudle下`src/main/java/com/longyou/haitunpay/`目录下
 
 ####第五步：
 在自定义的Application的onCreate中进行SDK初始化 [demo代码](/app/src/main/java/com/longyou/haitunpay/App.java)
