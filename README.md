@@ -31,13 +31,23 @@ AndroidManifest中添加如下配置：[demo配置](/app/src/main/AndroidManifes
 <meta-data android:name="HAITUN_WECHAT_KEY" android:value="07b9ca8e20293023a2a16525a1cc313e"/>
 <!-- 商户在海豚平台注册后获得的merid -->
 <meta-data android:name="HAITUN_WECHAT_MERID" android:value="10001"/>
+<!-- 此项一般情况下无需配置，备用字段 -->
+<!--<meta-data android:name="WECHAT_APPID" android:value="wxd3c9c179bb827f2c"/>-->
 <!-- ************微信支付配置end************ -->
+
+<!-- 动态配置创建订单地址（备用配置） -->
+<!--<meta-data android:name="HAITUN_CREATE_URL" android:value="http://p.ylsdk.com"/>-->
+<!-- 动态配置查询订单地址（备用配置） -->
+<!--<meta-data android:name="HAITUN_QUERY_URL" android:value="http://check.ylsdk.com"/>-->
 ```
 
 所需权限配置：`<uses-permission android:name="android.permission.INTERNET"/>`
 
 ####第四步：
-将Demo中`HaiTunPaySmapleForAS/app/src/main/java/com/longyou/haitunpay/`目录下的`wxapi`文件夹([demo目录位置戳这里](/app/src/main/java/com/longyou/haitunpay/))复制到您项目主Moudle下`src/main/java/com/longyou/haitunpay/`目录下
+将Demo中`HaiTunPaySmapleForAS/app/src/main/java/com/longyou/haitunpay/`目录下的`wxapi`文件夹([demo目录位置戳这里](/app/src/main/java/com/longyou/haitunpay/))复制到您项目主Moudle下`src/main/java/com/longyou/haitunpay/`目录下。
+
+***(重要说明:上述路径中`com/longyou/haitunpay`为应用包名，如后期更换包名的话，一定要记得修改此路径，否则`wxapi/WXPayEntryActivity.java`将无法收到支付回调)***
+
 
 ####第五步：
 在自定义的Application的onCreate中进行SDK初始化 [demo代码](/app/src/main/java/com/longyou/haitunpay/App.java)
