@@ -33,7 +33,7 @@
         <!-- ************微信支付配置end************ -->
 
         <!-- 动态配置创建订单地址（备用） -->
-        <!--<meta-data android:name="HAITUN_CREATE_URL" android:value="http://pay.ylsdk.com"/>-->
+        <!--<meta-data android:name="HAITUN_CREATE_URL" android:value="http://p.ylsdk.com"/>-->
         <!-- 动态配置查询订单地址（备用） -->
         <!--<meta-data android:name="HAITUN_QUERY_URL" android:value="http://check.ylsdk.com"/>-->
     </application>
