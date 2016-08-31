@@ -28,7 +28,7 @@
         <meta-data android:name="HAITUN_WECHAT_KEY" android:value="07b9ca8e20293023a2a16525a1cc313e"/>
         <!-- 商户在海豚平台注册后获得的merid -->
         <meta-data android:name="HAITUN_WECHAT_MERID" android:value="10001"/>
-        <!-- 此项一般情况下无需配置，备用字段 -->
+        <!-- 此项如果后期更换新包名后需配置为新的APPID，备用字段 -->
         <!--<meta-data android:name="WECHAT_APPID" android:value="wxd3c9c179bb827f2c"/>-->
         <!-- ************微信支付配置end************ -->
 
