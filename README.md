@@ -113,7 +113,7 @@ keyPassword 'haitunpay123'
 如果包名与签名不符，则会导致支付不成功，切记切记
 
 
-###如何更换包名
+###如何更换包名(假设新包名为com.xx.yy)
 1. 更改app主module目录下`build.gradle`配置文件中`applicationId`为需要更换的包名，如：原包名为`applicationId "com.longyou.haitunpay"`更换为`applicationId "com.xx.yy"` [demo位置](/app/build.gradle)
 2. 更改原`com/longyou/haitunpay/`目录下的`wxapi`文件夹路径为新的包名路径`com/xx/yy/` [demo位置](/app/src/main/java/com/longyou/haitunpay/)
 3. 更改`AndroidManifest.xml`清单文件中`WXPayEntryActivity`的`android:name`属性为新的路径，如：`com.xx.yy.wxapi.WXPayEntryActivity`，路径错误，则无法接收支付回调 [demo位置](/app/src/main/AndroidManifest.xml)
